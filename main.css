@@ -51,6 +51,9 @@ table {
 }
 strong { font-weight: bold; font-family: Arial; }
 em { font-style: italic; }
+.clear { clear: both; }
+.floatL { float: left; }
+.floatR { float: right; }
 
 /*** App specific styles **/
 #page { max-width: 960px; margin: 50px auto 20px; }
@@ -66,3 +69,5 @@ h1 { font-family: 'Amaranth', sans-serif; font-weight: 400; margin: 10px 0 20px;
 #preview ul li:nth-child(4n) { margin-right: 0; }
 #preview ul li img { width: 100%; height: 210px; }
 #preview ul li .info { padding: 5px; background: #C2E9FC; font-size: 0.9em; height: 80px; box-sizing: border-box; overflow: hidden; word-wrap: break-word; line-height: 18px; }
+
+.user { display: inline-block; margin: 0 10px; line-height: 30px; }

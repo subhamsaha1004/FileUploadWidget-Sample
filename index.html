@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<title>File Upload Widget</title>
 
 	<link href='http://fonts.googleapis.com/css?family=Kelly+Slab|Oleo+Script+Swash+Caps:400,700|Amaranth:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -9,7 +10,12 @@
 </head>
 <body>
 	<div id="page">
-		<h1>HTML5 FileUpload Widget</h1>
+		<div class="userWrapper">
+			<button class="btn floatR login">Login</button>
+			<span class="user floatR"></span>
+			<div class="clear"></div>
+		</div>
+		<h1 class="clear">HTML5 FileUpload Widget</h1>
 		<div id="content">
 			<div id="dropZone">Drag your files here</div>
 			<div id="preview">
@@ -21,6 +27,8 @@
 		</div>
 	</div>
 
+	<script src="https://login.persona.org/include.js"></script>
+	<script src="persona.js"></script>
 	<script src="app.js"></script>
 </body>
 </html>
