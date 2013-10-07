@@ -2,7 +2,7 @@
 	var doc = window.document;
 
 	var userWrapper = doc.querySelector('.userWrapper');
-			currentUser = 'bob@example.com';
+			currentUser = null;
 
 	document.addEventListener('click', function(e){
 		var elem = e.target;
@@ -17,6 +17,8 @@
     return function() {
 	    if (xhr.readyState == 4) {
         if (xhr.status == 200){
+        	var res = xhr.response;
+        	console.log(res);
           // reload page to reflect new login state
           //window.location.reload();
           var login = doc.querySelector('.login'),
@@ -47,7 +49,7 @@
 	  // verification of user's email address and it must arrange for the binding
 	  // of currentUser to said address when the page is reloaded
 	  var xhr = new XMLHttpRequest();
-	  xhr.open("POST", "/xhr/sign-in", true);
+	  xhr.open("POST", "/login.php", true);
 	  // see http://www.openjs.com/articles/ajax_xmlhttp_using_post.php
 	  var param = "assertion="+assertion;
 	  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -64,7 +66,7 @@
 	  // it must arrange for the binding of currentUser to 'null' when the page
 	  // is reloaded
 	  var xhr = new XMLHttpRequest();
-	  xhr.open("GET", "/xhr/sign-out", true);
+	  xhr.open("GET", "/logout.php", true);
 	  xhr.send(null);
 	  xhr.onreadystatechange = simpleXhrSentinel(xhr); 
 	}
