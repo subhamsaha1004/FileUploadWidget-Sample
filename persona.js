@@ -8,7 +8,7 @@
 		var elem = e.target;
 		if(elem.classList.contains('login')){
 			navigator.id.request();
-		} else if (elem.contains('logout')){
+		} else if (elem.classList.contains('logout')){
 			navigator.id.logout();
 		}
 	}, false);
@@ -49,12 +49,12 @@
 	  // verification of user's email address and it must arrange for the binding
 	  // of currentUser to said address when the page is reloaded
 	  var xhr = new XMLHttpRequest();
-	  xhr.open("POST", "/login.php", true);
+	  xhr.open("POST", "login.php", true);
 	  // see http://www.openjs.com/articles/ajax_xmlhttp_using_post.php
 	  var param = "assertion="+assertion;
 	  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	  xhr.setRequestHeader("Content-length", param.length);
-	  xhr.setRequestHeader("Connection", "close");
+	  //xhr.setRequestHeader("Content-length", param.length);
+	  //xhr.setRequestHeader("Connection", "close");
 	  xhr.send(param); // for verification by your backend
 
 	  xhr.onreadystatechange = simpleXhrSentinel(xhr); 
@@ -66,7 +66,7 @@
 	  // it must arrange for the binding of currentUser to 'null' when the page
 	  // is reloaded
 	  var xhr = new XMLHttpRequest();
-	  xhr.open("GET", "/logout.php", true);
+	  xhr.open("GET", "logout.php", true);
 	  xhr.send(null);
 	  xhr.onreadystatechange = simpleXhrSentinel(xhr); 
 	}
